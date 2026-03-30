@@ -1,2 +1,5 @@
 .DS_Store
 mri_data_final/
+mri_data_EFFICIENTNET/
+mri_data_MLLM_DATA/
+mri_data_YOLO_v10/
