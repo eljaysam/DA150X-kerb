@@ -3,3 +3,7 @@ mri_data_final/
 mri_data_EFFICIENTNET/
 mri_data_MLLM_DATA/
 mri_data_YOLO_v10/
+NVIDIA-Linux-x86_64-550.54.15.run
+install_gpu_driver.py
+mri_env/
+src/__pycache__/
