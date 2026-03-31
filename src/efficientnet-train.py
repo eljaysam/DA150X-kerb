@@ -6,7 +6,13 @@ from tensorflow.keras import layers, models
 import os
 
 # 1. Configuration
-DATA_DIR = "../mri_data_EFFICIENTNET" # Make sure this points to your output folder
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "mri_data_EFFICIENTNET"))
+
+# Verify the dataset directory exists
+if not os.path.exists(DATA_DIR):
+    raise FileNotFoundError(f"Dataset directory not found at: {DATA_DIR}\nMake sure 'mri_data_EFFICIENTNET' exists in the parent directory.")
+
 IMG_SIZE = (600, 600)
 BATCH_SIZE = 4 # Kept very small because B7 requires massive amounts of RAM/VRAM
 EPOCHS = 25
