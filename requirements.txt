@@ -52,6 +52,9 @@ termcolor==3.1.0
 tqdm==4.67.3
 typing_extensions==4.15.0
 urllib3==2.6.3
+ultralytics
+torch
+torchvision
 Werkzeug==3.1.7
 wrapt==2.1.2
 zipp==3.21.0
