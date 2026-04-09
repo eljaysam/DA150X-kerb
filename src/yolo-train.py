@@ -22,17 +22,28 @@ def main():
     # The '.pt' file will automatically download from Ultralytics the first time you run this
     model = YOLO('yolov8s-cls.pt')
 
-    # 3. Train the model
-    # Ultralytics natively expects the "root/train/class" folder structure your formatter built!
-    print("Starting YOLO training...")
+    # 3. Train the model (with ALL augmentations disabled)
+    print("Starting YOLO training with augmentations turned OFF...")
     results = model.train(
-        data=DATA_DIR,          # Path to the root dataset folder
-        epochs=EPOCHS,          # Maximum epochs (25)
-        imgsz=IMG_SIZE,         # Image size (640)
-        batch=16,               # YOLO is VRAM efficient; it can easily handle batch size 16
-        patience=3,             # Built-in EARLY STOPPING! Stops if no improvement for 3 epochs
-        project='yolo_tumor',   # Folder name to save results
-        name='run_1'            # Sub-folder for this specific training attempt
+        data=DATA_DIR,          
+        epochs=EPOCHS,          
+        imgsz=IMG_SIZE,         
+        batch=16,               
+        patience=3,             
+        project='yolo_tumor',   
+        name='run_no_aug',      # Changed the name so you don't overwrite your first run!
+        
+        # --- NEW: Explicitly Disable All Augmentations ---
+        fliplr=0.0,       # 0% chance of horizontal flip
+        flipud=0.0,       # 0% chance of vertical flip
+        degrees=0.0,      # 0 degree image rotation
+        scale=0.0,        # 0% image scaling/zooming
+        translate=0.0,    # 0% image shifting
+        hsv_h=0.0,        # Disable hue (color) changes
+        hsv_s=0.0,        # Disable saturation changes
+        hsv_v=0.0,        # Disable value (brightness) changes
+        erasing=0.0,      # Disable random pixel dropping
+        mosaic=0.0        # Disable YOLO's signature image-mixing
     )
     
     print("\nTraining complete!")
