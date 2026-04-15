@@ -7,3 +7,4 @@ NVIDIA-Linux-x86_64-550.54.15.run
 install_gpu_driver.py
 mri_env/
 src/__pycache__/
+.env
