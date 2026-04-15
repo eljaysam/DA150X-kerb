@@ -10,7 +10,7 @@ from vertexai.generative_models import GenerativeModel, Image
 
 # 1. Configuration
 # REPLACE THIS with the exact Project ID from your Google Cloud Console!
-PROJECT_ID = "your-project-id-here"
+PROJECT_ID = "bens-computing-project"
 LOCATION = "us-central1" # Standard robust server region
 
 # Initialize Vertex AI (This automatically uses your gcloud authentication)
