@@ -9,7 +9,7 @@ import splitfolders  # Requires: pip install split-folders
 RESOLUTIONS = {
     "YOLO_v10": (640, 640),
     "EFFICIENTNET": (600, 600),
-    "MLLM_DATA": (128, 128)
+    "MLLM_DATA": (600, 600)
 }
 
 def download_raw_data():
